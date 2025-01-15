@@ -1,5 +1,5 @@
-import { createApp, ref } from "vue";
 import { useColorMode } from "@vueuse/core";
+import { createApp, ref } from "vue";
 import "uno.css";
 
 type ModeType = "light" | "dark" | "cafe";

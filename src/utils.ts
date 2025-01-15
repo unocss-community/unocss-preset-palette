@@ -1,6 +1,5 @@
+import type { ThemeColors } from "./types";
 import { parseCssColor } from "@unocss/preset-mini/utils";
-import { type ThemeColors } from "./types";
-
 
 export function rgb2hsl(values: (string | number) []) {
   const [r, g, b] = values.map(e => Number(e) / 255);
@@ -17,7 +16,7 @@ export function rgb2hsl(values: (string | number) []) {
   // if not achromatic...
   if (max !== min) {
     s = (max - l) / Math.min(l, 1 - l);
-    
+
     switch (max) {
       case r:
         h = 60 * (g - b) / d;
@@ -35,7 +34,6 @@ export function rgb2hsl(values: (string | number) []) {
   }
   return [h, s, l];
 }
-
 
 function getCssColor(color: string | (string | number) [], colorFormat: "rgb" | "hsl") {
   if (Array.isArray(color)) {
@@ -60,10 +58,12 @@ function getCssColor(color: string | (string | number) [], colorFormat: "rgb" | 
 }
 
 /**
+ * 将主题颜色对象转换为指定格式的颜色组件
  *
- * @param colors
- * @param defaultTheme
- * @returns
+ * @param colors - 主题颜色对象，包含不同主题下的颜色值
+ * @param defaultTheme - 默认主题名称，用于处理未指定主题的颜色值
+ * @param colorFormat - 颜色格式，支持 "rgb" 或 "hsl"
+ * @returns 返回一个对象，包含按主题和颜色名称分类的颜色组件
  */
 export function getColorComponents(colors: ThemeColors = {}, defaultTheme: string, colorFormat: "rgb" | "hsl") {
   const rs: Record<string, Record<string, | string>> = {};
@@ -86,7 +86,6 @@ export function getColorComponents(colors: ThemeColors = {}, defaultTheme: strin
   }
   return rs;
 }
-
 
 export function normalizeVarName(varName: string) {
   return `--${varName}`.replace(/^-+/, "--");
