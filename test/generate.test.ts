@@ -1,9 +1,10 @@
 import { createGenerator, presetUno } from "unocss";
 import { describe, expect, it } from "vitest";
 import { presetPalette } from "../src";
+
 describe("generate test", () => {
   it("generate prelights", async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetPalette({
           themeColors: {
@@ -20,7 +21,7 @@ describe("generate test", () => {
   });
 
   it("generate", async () => {
-    const uno = createGenerator({
+    const uno = await createGenerator({
       presets: [
         presetPalette({
           themeColors: {

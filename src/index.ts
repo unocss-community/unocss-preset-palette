@@ -1,9 +1,7 @@
-import { definePreset } from "@unocss/core";
 import type { Theme } from "@unocss/preset-mini";
 import type { CssVarName, PaletteOptions } from "./types";
+import { definePreset } from "@unocss/core";
 import { getColorComponents, normalizeVarName } from "./utils";
-
-
 
 /**
  *
@@ -12,7 +10,7 @@ import { getColorComponents, normalizeVarName } from "./utils";
  */
 export const presetPalette = definePreset((options: PaletteOptions = {}) => {
   const { colors: _colors = {}, themeColors = {}, colorMode = {}, colorFormat = "rgb", useOpacityVariable = true, colorScheme = {} } = options;
-  
+
   Object.assign(themeColors, { ..._colors });
 
   const { selector = ":root", attribute = "class", defaultValue = "default" } = colorMode;
@@ -24,7 +22,7 @@ export const presetPalette = definePreset((options: PaletteOptions = {}) => {
   let getVarName: (name: string) => string;
 
   if (typeof cssVarName === "string") {
-    getVarName = name => normalizeVarName(cssVarName.replace(/\[name]/g, name));
+    getVarName = name => normalizeVarName(cssVarName.replace(/\[name\]/g, name));
   } else if (typeof cssVarName === "function") {
     getVarName = name => normalizeVarName(cssVarName(name));
   } else {
@@ -33,11 +31,10 @@ export const presetPalette = definePreset((options: PaletteOptions = {}) => {
     getVarName = name => normalizeVarName(`${prefix}${name}${suffix}`);
   }
 
-  const colors = Object.fromEntries(Object.keys(themeColors).map(e => {
+  const colors = Object.fromEntries(Object.keys(themeColors).map((e) => {
     const colorValue = useOpacityVariable ? `${colorFormat}(var(${getVarName(e)}-${colorFormat}))` : `var(${getVarName(e)})`;
     return [e, colorValue];
   }));
-
 
   return {
     name: "preset-palette",
@@ -80,6 +77,5 @@ export const presetPalette = definePreset((options: PaletteOptions = {}) => {
     ]
   };
 });
-
 
 export default presetPalette;

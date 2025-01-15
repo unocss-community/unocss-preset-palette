@@ -1,14 +1,15 @@
 import type * as CSS from "csstype";
+
 export interface CSSProperties extends CSS.Properties<string | number>, CSS.PropertiesHyphen<string | number> {
-  [v: `--${string}`]: string | number | undefined
+  [v: `--${string}`]: string | number | undefined;
 }
 export type ThemeColors = Record<string, string | (string | number)[] | Record<string, string | (string | number)[]>>;
 
 export type CssVarName = string | {
-  (name: string): string
+  (name: string): string;
 } | {
-  prefix?: string
-  suffix?: string
+  prefix?: string;
+  suffix?: string;
 };
 
 export type ColorScheme = "light" | "dark";
@@ -17,29 +18,29 @@ export interface PaletteOptions {
   /**
    * define theme colors
    */
-  themeColors?: ThemeColors
+  themeColors?: ThemeColors;
   /**
- * @deprecated
- */
-  colors?: ThemeColors
+   * @deprecated
+   */
+  colors?: ThemeColors;
   /**
-  *  @see "@vueuse/core/useColorMode"
-  */
+   *  @see "@vueuse/core/useColorMode"
+   */
   colorMode?: {
     /**
-   *  @default  ':root'
-   */
-    selector?: string
+     *  @default  ':root'
+     */
+    selector?: string;
     /**
-   *  @default 'class'
-   */
-    attribute?: string
+     *  @default 'class'
+     */
+    attribute?: string;
     /**
-   *  @default 'light'
-   */
-    defaultValue?: string
-  }
- 
+     *  @default 'light'
+     */
+    defaultValue?: string;
+  };
+
   /**
    * use opacity variable
    *
@@ -51,15 +52,14 @@ export interface PaletteOptions {
    * ```
    * @default true
    */
-  useOpacityVariable?: boolean
+  useOpacityVariable?: boolean;
 
   /**
-  * @default --un-palette-[name]-color
-  */
-  cssVarName?: CssVarName
+   * @default --un-palette-[name]-color
+   */
+  cssVarName?: CssVarName;
 
-  colorFormat?: "rgb" | "hsl"
+  colorFormat?: "rgb" | "hsl";
 
-  colorScheme?: Record<string, ColorScheme>
+  colorScheme?: Record<string, ColorScheme>;
 }
-
