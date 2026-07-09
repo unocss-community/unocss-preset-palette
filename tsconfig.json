@@ -4,9 +4,8 @@
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "lib": ["esnext", "dom"],
-    "baseUrl": ".",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "types": [
       "vue/jsx"
@@ -18,6 +17,7 @@
     "skipDefaultLibCheck": true
   },
   "include": [
+    "./env.d.ts",
     "./src/**/*.ts",
     "./**/*.tsx"
   ],

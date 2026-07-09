@@ -2,7 +2,7 @@ import type { ThemeColors } from "./types";
 import { parseCssColor } from "@unocss/preset-mini/utils";
 
 export function rgb2hsl(values: (string | number) []) {
-  const [r, g, b] = values.map(e => Number(e) / 255);
+  const [r, g, b] = values.map((e) => Number(e) / 255);
   // convert values to percentage
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);

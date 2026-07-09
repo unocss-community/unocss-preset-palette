@@ -63,3 +63,12 @@ export interface PaletteOptions {
 
   colorScheme?: Record<string, ColorScheme>;
 }
+
+export interface Colors {
+  [key: string]: Colors & {
+    DEFAULT?: string;
+  } | string;
+}
+export interface PresetPlatteThemes {
+  colors: Colors;
+}

@@ -1,6 +1,6 @@
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import jsx from "@vitejs/plugin-vue-jsx";
-
 import uno from "unocss/vite";
 import { defineConfig } from "vite";
 
@@ -11,7 +11,7 @@ export default defineConfig(() => ({
   plugins: [
     jsx(),
     uno({
-      configFile: resolve(__dirname, "./src/uno.config.ts")
+      configFile: resolve(dirname(fileURLToPath(import.meta.url)), "../uno.config.ts")
     })
   ]
 }));
