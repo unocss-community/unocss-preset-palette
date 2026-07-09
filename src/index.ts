@@ -1,15 +1,6 @@
-import type { CssVarName, PaletteOptions } from "./types";
+import type { CssVarName, PaletteOptions, PresetPlatteThemes } from "./types";
 import { definePreset } from "@unocss/core";
 import { getColorComponents, normalizeVarName } from "./utils";
-
-interface Colors {
-  [key: string]: Colors & {
-    DEFAULT?: string;
-  } | string;
-}
-export interface PresetPlatteThemes {
-  colors: Colors;
-}
 
 /**
  *
