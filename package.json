@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@curev/eslint-config": "^0.6.2",
+    "@types/node": "^26.1.0",
     "@typescript/native-preview": "7.0.0-dev.20260707.2",
     "@vitejs/plugin-vue-jsx": "^5.1.6",
     "@vitest/coverage-v8": "^4.1.10",
