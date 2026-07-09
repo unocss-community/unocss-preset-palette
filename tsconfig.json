@@ -6,18 +6,20 @@
     "lib": ["esnext", "dom"],
     "baseUrl": ".",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "types": [
       "vue/jsx"
     ],
     "strict": true,
     "strictNullChecks": true,
+    "ignoreDeprecations": "6.0",
     "noEmit": true,
     "esModuleInterop": true,
     "skipDefaultLibCheck": true
   },
   "include": [
+    "./env.d.ts",
     "./src/**/*.ts",
     "./**/*.tsx"
   ],

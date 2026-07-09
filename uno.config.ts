@@ -1,10 +1,10 @@
-import { defineConfig, presetUno } from "unocss";
+import { defineConfig, presetWind4 } from "unocss";
 import presetPalette from "./src";
 
 export default defineConfig({
 
   presets: [
-    presetUno(),
+    presetWind4(),
     presetPalette({
       colorMode: {
         attribute: "data-theme"
