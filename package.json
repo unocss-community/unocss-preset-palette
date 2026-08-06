@@ -1,7 +1,7 @@
 {
   "name": "unocss-preset-palette",
   "type": "module",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "packageManager": "pnpm@11.20.0",
   "description": "Palette Preset for UnoCSS",
   "author": "chizukicn",
