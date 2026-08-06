@@ -45,8 +45,7 @@
     "up:polyfill": "nolyfill install"
   },
   "peerDependencies": {
-    "@unocss/core": ">=66",
-    "@unocss/preset-mini": ">=66"
+    "@unocss/core": ">=66"
   },
   "dependencies": {
     "@unocss/rule-utils": "^66.7.5"
@@ -54,7 +53,6 @@
   "devDependencies": {
     "@curev/eslint-config": "^0.6.2",
     "@types/node": "^26.1.2",
-    "@typescript/native-preview": "7.0.0-dev.20260707.2",
     "@vitejs/plugin-vue-jsx": "^5.1.6",
     "@vitest/coverage-v8": "^4.1.10",
     "@vueuse/core": "^14.4.0",
@@ -62,7 +60,6 @@
     "eslint": "^10.8.0",
     "lint-staged": "^17.3.0",
     "nolyfill": "^1.0.44",
-    "prettier": "^3.9.6",
     "simple-git-hooks": "^2.13.1",
     "taze": "^19.17.1",
     "tsdown": "^0.22.14",
