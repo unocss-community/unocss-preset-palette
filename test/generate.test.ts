@@ -1,4 +1,4 @@
-import { createGenerator, presetUno } from "unocss";
+import { createGenerator, presetWind4 } from "unocss";
 import { describe, expect, it } from "vitest";
 import { presetPalette } from "../src";
 
@@ -28,15 +28,17 @@ describe("generate test", () => {
             primary: "rgb(255,0,0)"
           }
         }),
-        presetUno()
+        presetWind4()
       ]
     });
     const { css } = await uno.generate("bg-primary", {
       preflights: false
     });
     expect(css).toMatchInlineSnapshot(`
-      "/* layer: default */
-      .bg-primary{--un-bg-opacity:1;background-color:rgb(var(--un-palette-primary-color-rgb) / var(--un-bg-opacity));}"
+      "/* layer: properties */
+      @property --un-bg-opacity{syntax:"<percentage>";inherits:false;initial-value:100%;}
+      /* layer: default */
+      .bg-primary{background-color:color-mix(in srgb, rgb(var(--un-palette-primary-color-rgb)) var(--un-bg-opacity), transparent);}"
     `);
   });
 });

@@ -2,7 +2,6 @@ import { defineConfig, presetWind4 } from "unocss";
 import presetPalette from "./src";
 
 export default defineConfig({
-
   presets: [
     presetWind4(),
     presetPalette({
@@ -10,7 +9,7 @@ export default defineConfig({
         attribute: "data-theme"
       },
       colorFormat: "rgb",
-      colors: {
+      themeColors: {
         primary: "#ff0000",
         tertiary: "#30fad3",
         // dark mode

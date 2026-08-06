@@ -1,8 +1,3 @@
-import type * as CSS from "csstype";
-
-export interface CSSProperties extends CSS.Properties<string | number>, CSS.PropertiesHyphen<string | number> {
-  [v: `--${string}`]: string | number | undefined;
-}
 export type ThemeColors = Record<string, string | (string | number)[] | Record<string, string | (string | number)[]>>;
 
 export type CssVarName = string | {
@@ -19,10 +14,6 @@ export interface PaletteOptions {
    * define theme colors
    */
   themeColors?: ThemeColors;
-  /**
-   * @deprecated
-   */
-  colors?: ThemeColors;
   /**
    *  @see "@vueuse/core/useColorMode"
    */
@@ -69,6 +60,7 @@ export interface Colors {
     DEFAULT?: string;
   } | string;
 }
+
 export interface PresetPlatteThemes {
-  colors: Colors;
+  colors?: Colors;
 }

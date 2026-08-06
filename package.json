@@ -2,7 +2,7 @@
   "name": "unocss-preset-palette",
   "type": "module",
   "version": "0.5.0",
-  "packageManager": "pnpm@11.10.0",
+  "packageManager": "pnpm@11.20.0",
   "description": "Palette Preset for UnoCSS",
   "author": "chizukicn",
   "license": "MIT",
@@ -49,28 +49,28 @@
     "@unocss/preset-mini": ">=66"
   },
   "dependencies": {
-    "csstype": "^3.2.3"
+    "@unocss/rule-utils": "^66.7.5"
   },
   "devDependencies": {
     "@curev/eslint-config": "^0.6.2",
-    "@types/node": "^26.1.0",
+    "@types/node": "^26.1.2",
     "@typescript/native-preview": "7.0.0-dev.20260707.2",
     "@vitejs/plugin-vue-jsx": "^5.1.6",
     "@vitest/coverage-v8": "^4.1.10",
-    "@vueuse/core": "^14.3.0",
-    "bumpp": "^11.1.0",
-    "eslint": "^10.6.0",
-    "lint-staged": "^17.0.8",
+    "@vueuse/core": "^14.4.0",
+    "bumpp": "^12.1.1",
+    "eslint": "^10.8.0",
+    "lint-staged": "^17.3.0",
     "nolyfill": "^1.0.44",
-    "prettier": "^3.9.4",
+    "prettier": "^3.9.6",
     "simple-git-hooks": "^2.13.1",
-    "taze": "^19.14.1",
-    "tsdown": "^0.22.3",
+    "taze": "^19.17.1",
+    "tsdown": "^0.22.14",
     "typescript": "6.0.3",
     "unocss": "^66.7.5",
-    "vite": "^8.1.3",
+    "vite": "^8.2.0",
     "vitest": "^4.1.10",
-    "vue": "^3.5.39"
+    "vue": "^3.5.40"
   },
   "simple-git-hooks": {
     "pre-commit": [

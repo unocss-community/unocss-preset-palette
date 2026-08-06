@@ -1,6 +1,6 @@
 import type { CssVarName, PaletteOptions, PresetPlatteThemes } from "./types";
 import { definePreset } from "@unocss/core";
-import { getColorComponents, normalizeVarName } from "./utils";
+import { colorComponentsToString, getColorComponents, normalizeVarName } from "./utils";
 
 /**
  *
@@ -8,9 +8,7 @@ import { getColorComponents, normalizeVarName } from "./utils";
  * @returns
  */
 export const presetPalette = definePreset<PaletteOptions, PresetPlatteThemes>((options: PaletteOptions = {}) => {
-  const { colors: _colors = {}, themeColors = {}, colorMode = {}, colorFormat = "rgb", useOpacityVariable = true, colorScheme = {} } = options;
-
-  Object.assign(themeColors, { ..._colors });
+  const { themeColors = {}, colorMode = {}, colorFormat = "rgb", useOpacityVariable = true, colorScheme = {} } = options;
 
   const { selector = ":root", attribute = "class", defaultValue = "default" } = colorMode;
 
@@ -60,7 +58,7 @@ export const presetPalette = definePreset<PaletteOptions, PresetPlatteThemes>((o
             }
 
             for (const colorName in colorComponents[theme]) {
-              const components = colorComponents[theme][colorName];
+              const components = colorComponentsToString(colorComponents[theme][colorName]);
               const varName = getVarName(colorName);
               if (useOpacityVariable) {
                 rs.push(`${varName}-${colorFormat}:${components}`, ";", `${varName}:${colorFormat}(var(${varName}-${colorFormat}))`, ";");
